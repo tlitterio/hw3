@@ -12,6 +12,36 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   // 🔥 YOUR CODE GOES HERE 🔥
   // Write the recipe (algorithm) in the comments. Then, write the code.
-  
+  let dropoffAddress = ride.dropoffLocation.address
+  let dropoffCity = ride.dropoffLocation.city
+  let dropoffState = ride.dropoffLocation.state
+  let dropoffZip = ride.dropoffLocation.zip
+  let numberOfPassengers = ride.numberOfPassengers
+  let passengerFirstName = ride.passengerDetails.first
+  let passengerFLastName = ride.passengerDetails.last
+  let passengerPhoneNumber = ride.passengerDetails.phoneNumber
+  let pickupAddress = ride.pickupLocation.address
+  let pickupCity = ride.pickupLocation.city
+  let pickupState = ride.pickupLocation.state
+  let pickupZip = ride.pickupLocation.zip
+  let isPurple = ride.purpleRequested
+  let serviceLevel
+  if (isPurple == true){
+    serviceLevel = `Noober Purple`
+  } else if (numberOfPassengers > 3) {
+    serviceLevel = `Noober XL`
+  } else {
+    serviceLevel = `Noober X`
+  }
+ console.log(`${serviceLevel} customer ${passengerFirstName} ${passengerFLastName}`)
+ console.log(`Contact number: ${passengerPhoneNumber}`)
+ console.log(`Pickup at:`)
+ console.log(`  ${pickupAddress}`)
+ console.log(`  ${pickupCity},${pickupState} ${pickupZip}`)
+ console.log(`Dropoff:`)
+ console.log(`  ${dropoffAddress}`)
+ console.log(`  ${dropoffCity},${dropoffState} ${dropoffZip}`)
+ 
+
   // 🔥 YOUR CODE ENDS HERE 🔥
 })
