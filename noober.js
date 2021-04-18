@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   // 🔥 YOUR CODE GOES HERE 🔥
   // Write the recipe (algorithm) in the comments. Then, write the code.
+  
+  // Create series of variables from json results to be consumed
   let dropoffAddress = ride.dropoffLocation.address
   let dropoffCity = ride.dropoffLocation.city
   let dropoffState = ride.dropoffLocation.state
@@ -26,6 +28,8 @@ document.addEventListener('DOMContentLoaded', async function() {
   let pickupZip = ride.pickupLocation.zip
   let isPurple = ride.purpleRequested
   let serviceLevel
+  
+  // Logic to assign rider status variable based on criteria; Purple Supersedes all; >3 rider upgrades to Noober XL
   if (isPurple == true){
     serviceLevel = `Noober Purple`
   } else if (numberOfPassengers > 3) {
@@ -33,6 +37,8 @@ document.addEventListener('DOMContentLoaded', async function() {
   } else {
     serviceLevel = `Noober X`
   }
+
+  // Human readable return consuming variables
  console.log(`${serviceLevel} customer ${passengerFirstName} ${passengerFLastName}`)
  console.log(`Contact number: ${passengerPhoneNumber}`)
  console.log(`Pickup at:`)
